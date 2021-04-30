@@ -17,7 +17,7 @@ const handleGetDataLineToday = (state = initialState, action) => {
     case GET_DATA_LINETODAY_SUCCESS:
       return {
         ...state,
-        data: action.result
+        data: action.res
       }
     case GET_DATA_LINETODAY_ERROR:
       return {

@@ -10,10 +10,10 @@ export const getDataLineTodayRequest = () => {
   }
 }
 
-export const getDataLineTodaySuccess = (result) => {
+export const getDataLineTodaySuccess = (res) => {
   return {
     type: GET_DATA_LINETODAY_SUCCESS,
-    result
+    res
   }
 }
 
@@ -30,7 +30,7 @@ export const getDataLineToday = () => {
 
     axios
       .get(process.env.REACT_APP_GET_LINETODAY)
-      .then((result) => dispatch(getDataLineTodaySuccess(result.data)))
+      .then((res) => dispatch(getDataLineTodaySuccess(res.data)))
       .catch((error) => dispatch(getDataLineTodayError(error)))
   }
 }
