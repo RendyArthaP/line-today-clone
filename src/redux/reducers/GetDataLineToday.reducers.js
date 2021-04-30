@@ -5,27 +5,31 @@ import {
 } from '../actions/GetDataLineToday.actions.js';
 
 const initialState = {
-  data: {}
+  data: {},
+  isLoading: true
 }
 
 const handleGetDataLineToday = (state = initialState, action) => {
   switch(action.type) {
     case GET_DATA_LINETODAY_REQUEST:
       return {
-        ...state
+        ...state,
+        isLoading: true
       }
     case GET_DATA_LINETODAY_SUCCESS:
       return {
         ...state,
-        data: action.res
+        isLoading: false,
+        data: action.result
       }
     case GET_DATA_LINETODAY_ERROR:
       return {
         ...state,
+        isLoading: false,
         error: action.error
       }
     default:
-      return state;
+      return state
   }
 }
 
