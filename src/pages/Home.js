@@ -4,6 +4,7 @@ import { getDataLineToday } from '../redux/actions/GetDataLineToday.actions';
 import Navbar from '../components/Navbar';
 import Category from '../components/Category';
 import Article from '../components/Article';
+import SkeletonLoader from '../components/SkeletonLoader';
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -11,6 +12,7 @@ const Home = () => {
   const parameterCategory = [...new Set(categoryLineToday && categoryLineToday.categories.map(item => item.name))]
   const [paramsCategory, setParamsCategory] = useState(categoryLineToday)
   const [defaultPage, setDefaultPage] = useState(true)
+  console.log(categoryLineToday)
 
   const handleFilterButton = (name) => {
     setDefaultPage(false)
@@ -30,6 +32,7 @@ const Home = () => {
           categoryLineToday = {parameterCategory} 
           handleFilterButton = {handleFilterButton}
         />
+        {/* {categoryLineToday === undefined ? <SkeletonLoader />} */}
         {defaultPage && (
           <div className="p-4 flex flex-col text-left w-full max-w-3xl mx-auto">
             {categoryLineToday && categoryLineToday.categories[0].templates.filter(news => news.title).map((article, index) => {
