@@ -9,7 +9,7 @@ const Article = ({articles}) => {
             key={article.id}
             className="py-3"
           >
-            <h1 className="font-black tracking-wider">
+            <h1 className="font-black tracking-wider text-sm md:text-base">
               {article.title.toUpperCase()}
             </h1>
             {article.sections.map((contents, index) => (
@@ -24,7 +24,7 @@ const Article = ({articles}) => {
                   : 
                     <div 
                       key={index} 
-                      className="flex flex-row flex-wrap justify-center md:justify-between"
+                      className="flex flex-row flex-wrap justify-center md:justify-between md:mx-10"
                     >
                       {contents.articles.slice(0, 6).map((content, index) => (
                         <div 

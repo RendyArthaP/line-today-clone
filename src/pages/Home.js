@@ -11,7 +11,7 @@ const Home = () => {
   const parameterCategory = [...new Set(categoryLineToday && categoryLineToday.categories.map(item => item.name))]
   const [paramsCategory, setParamsCategory] = useState(categoryLineToday)
   const [defaultPage, setDefaultPage] = useState(true)
-  
+
   const handleFilterButton = (name) => {
     setDefaultPage(false)
     const getCategory = categoryLineToday.categories.filter((article) => article.name === name);
@@ -53,7 +53,7 @@ const Home = () => {
                         : 
                           <div 
                             key={index} 
-                            className="flex flex-row flex-wrap justify-center md:justify-between"
+                            className="flex flex-row flex-wrap justify-center md:justify-between md:mx-10"
                           >
                             {contents.articles.slice(0, 6).map((content, index) => (
                               <div 

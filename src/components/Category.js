@@ -10,7 +10,7 @@ const Category = ({categoryLineToday, handleFilterButton}) => {
             className="w-full cursor-pointer"
             onClick={() => handleFilterButton(category)}
           >
-            <h1 className="text-sm font-semibold w-full items-center text-center mr-10">
+            <h1 className="text-sm font-normal w-full items-center text-center mr-10">
               {category}
             </h1>
           </div>  
