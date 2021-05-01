@@ -10,7 +10,7 @@ const Home = () => {
   const categoryLineToday = useSelector((state) => state.handleGetDataLineToday.data.result)
   const parameterCategory = [...new Set(categoryLineToday && categoryLineToday.categories.map(item => item.name))]
   const [paramsCategory, setParamsCategory] = useState(categoryLineToday)
-
+  console.log(categoryLineToday)
   const handleFilterButton = (name) => {
     const getCategory = categoryLineToday.categories.filter((article) => article.name === name);
     setParamsCategory(getCategory)
