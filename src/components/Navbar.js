@@ -1,12 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div className="w-full h-16 bg-green-500">
       <div className="p-4">
-        <h1 className="font-bold text-xl text-white">
+        <Link 
+          className="font-bold text-xl text-white"
+          to="/"
+        >
           LINE Today
-        </h1>
+        </Link>
+        <Link 
+          className="font-bold text-xl text-white mx-6" 
+          to="/bookmark"
+        >
+          Bookmark
+        </Link>
       </div>
     </div>
   )
