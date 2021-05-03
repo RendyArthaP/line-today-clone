@@ -3,6 +3,7 @@ import axios from 'axios';
 export const GET_DATA_LINETODAY_REQUEST = 'GET_DATA_LINETODAY_REQUEST';
 export const GET_DATA_LINETODAY_SUCCESS = 'GET_DATA_LINETODAY_SUCCESS';
 export const GET_DATA_LINETODAY_ERROR = 'GET_DATA_LINETODAY_ERROR';
+export const GET_FILTER_CATEGORY = 'GET_FILTER_CATEGORY'
 
 export const getDataLineTodayRequest = () => {
   return {
@@ -21,6 +22,13 @@ export const getDataLineTodayError = (error) => {
   return {
     type: GET_DATA_LINETODAY_ERROR,
     error
+  }
+}
+
+export const filterCategory = (name) => {
+  return {
+    type: GET_FILTER_CATEGORY,
+    name
   }
 }
 
